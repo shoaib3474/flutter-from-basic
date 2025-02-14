@@ -49,7 +49,7 @@ class _HomePageState extends State<HomePage> {
             ),
           ),
           Container(
-            margin: EdgeInsets.only(left: 10),
+            margin: EdgeInsets.only(left: 10, bottom: 10),
             height: 50,
             child: Row(
               children: [
@@ -61,6 +61,10 @@ class _HomePageState extends State<HomePage> {
                     child: TextField(
                       controller: msgController,
                       decoration: InputDecoration(
+                          border: InputBorder.none, // Remove the bottom line
+                          contentPadding: EdgeInsets.symmetric(
+                              vertical: 15), // Adjust the padding
+
                           hintText: 'Type your message here',
                           prefixIcon: Icon(Icons.add),
                           hintStyle: TextStyle(color: Colors.black)),
@@ -68,7 +72,9 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
                 Padding(
-                    padding: const EdgeInsets.only(left: 26, right: 16),
+                    padding: const EdgeInsets.only(
+                      right: 16,
+                    ),
                     child: IconButton(
                       onPressed: () {
                         setState(() {

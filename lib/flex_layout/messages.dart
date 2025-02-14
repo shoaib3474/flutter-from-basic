@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 Widget item(
   String textMsg,
-  Function(String) onDelete, // Add a callback function for deleting the message
+  Function(String) onDelete,
 ) {
   return Column(
     children: [

@@ -61,7 +61,7 @@ class _PostListPageState extends State<PostListPage> {
             GestureDetector(
               onTap: () {
                 setState(() {
-                  if (editIndex == Null) {
+                  if (editIndex != Null) {
                     postList.add(PostModel(
                         title: titleController.text,
                         description: descController.text));

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_from_basic/api/get_api.dart';
-import 'package:flutter_from_basic/state_full_and_state_less/post_list_page.dart';
 
 void main() {
   runApp(MyApp());

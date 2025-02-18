@@ -4,8 +4,9 @@ import 'package:http/http.dart' as http;
 
 Future<List<dynamic>> callApi() async {
   final String url = 'https://jsonplaceholder.typicode.com/posts';
-  final response = await http.get(Uri.parse(url));
 
+  final response = await http.get(Uri.parse(url));
+  print(response.body);
   if (response.statusCode == 200) {
     return jsonDecode(response.body);
   } else {
@@ -47,14 +48,18 @@ class _GetApiState extends State<GetApi> {
               return Text('No data found');
             } else {
               return ListView.builder(
-                itemCount: snapshot.data!.length,
-                itemBuilder: (context, index) {
-                  return ListTile(
-                    title: Text(snapshot.data![index]['title']),
-                    subtitle: Text(snapshot.data![index]['body']),
-                  );
-                },
-              );
+                  itemCount: snapshot.data!.length,
+                  itemBuilder: (context, index) {
+                    return Card(
+                      color: Colors.white,
+                      margin:
+                          EdgeInsets.symmetric(horizontal: 18, vertical: 10),
+                      child: ListTile(
+                        title: Text(snapshot.data![index]['title']),
+                        subtitle: Text(snapshot.data![index]['body']),
+                      ),
+                    );
+                  });
             }
           },
         ),
